@@ -4,6 +4,7 @@ import * as bs from "react-icons/bs"
 import experience from "../data/json/experience.json"
 import education from "../data/json/education.json"
 import skills from "../data/json/skills.json"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function Home() {
   return (
@@ -118,6 +119,7 @@ export default function Home() {
 
         </div>
       </div>
+      <SpeedInsights />
     </div>
   );
 }
