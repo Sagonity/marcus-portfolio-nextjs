@@ -1,0 +1,30 @@
+[
+    {
+        "skill": "HTML",
+        "quality": 3
+    },
+    {
+        "skill": "JS",
+        "quality": 4
+    },
+    {
+        "skill": "CSS",
+        "quality": 3
+    },
+    {
+        "skill": "SQL",
+        "quality": 3
+    },
+    {
+        "skill": "Python",
+        "quality": 2
+    },
+    {
+        "skill": "Node.js",
+        "quality": 4
+    },
+    {
+        "skill": "Express.js",
+        "quality": 4
+    }
+]

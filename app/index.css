@@ -1,0 +1,54 @@
+.container {
+    max-width: 100vw;
+}
+
+.row {
+    background-color: rgb(230, 230, 230);
+    padding: 12px 12vw;
+}
+
+.col {
+    margin: 12px;
+}
+
+.section {
+    margin: 12px;
+    padding: 24px;
+    background-color: white;
+    box-shadow: 6px 6px 5px whitesmoke;
+}
+
+.contact-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-list li {
+    padding: 12px 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border-radius: 50%;
+    border: black 3px solid;
+    height: 200px;
+    width: 200px;
+    box-shadow: black 3px 3px 5px;
+}
+
+.subsection {
+    display: flex;
+    justify-content: space-between;
+}
+
+.subsection p {
+    margin-bottom: 0;
+}
+
+a {
+  color: #00B7FF;
+}

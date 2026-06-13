@@ -1,65 +1,123 @@
 import Image from "next/image";
+import "./index.css";
+import * as bs from "react-icons/bs"
+import experience from "../data/json/experience.json"
+import education from "../data/json/education.json"
+import skills from "../data/json/skills.json"
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="container">
+      {/* About Me Section */}
+      <div className="row" id="main">
+        <div className="col">
+          <div className="section" id="about">
+            <h3>About Me</h3>
+            <hr />
+            <div className="subsection">
+              <div>
+                <p><b>Languages:</b> HTML, JS, CSS, SQL, Python</p>
+                <p><b>Environments:</b> Node.js</p>
+                <p><b>Frameworks:</b> Express.js</p>
+              </div>
+              {/* Next.js Optimized Image Component */}
+              <Image 
+                src="/images/Profilbilde.jpg" 
+                width={200} 
+                height={200} 
+                alt="Marcus Tangen Profile Picture" 
+                priority
+              />
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+
+      {/* Main Body Grid Layout */}
+      <div className="row" id="submain">
+        
+        {/* Left Column: Work Experience */}
+        <div className="col">
+          <div className="section" id="experience">
+            <h4>Work Experience</h4>
+            <hr />
+            {experience.map((exp, index) => (
+              <div className="item" key={index}>
+                <h5>{exp.title}</h5>
+                <p style={{ marginBottom: "0px" }}>
+                  {exp.company} <i>{exp.stilling}</i>
+                </p>
+                <p>{exp.location} ({exp.began}-{exp.ended})</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
+
+        {/* Right Column: Contact, Education & Skills */}
+        <div className="col">
+          
+          {/* Contact Details Block */}
+          <div className="section" id="contact">
+            <ul className="contact-list">
+              <li className="flex items-center gap-x-2">
+                <bs.BsFillGeoAltFill /> Norway, Fjellhamar
+              </li>
+              <li className="flex items-center gap-x-2">
+                <bs.BsEnvelopeAtFill />
+                <a href="mailto:marcustangen@gmail.com"> marcustangen@gmail.com</a>
+              </li>
+              <li className="flex items-center gap-x-2">
+                <bs.BsFileEarmarkPdfFill /> 
+                <a href="https://drive.google.com/open?id=1aAojQAcWgQBZAMTgh4IbkJXRVul8cQ4y" target="_blank" rel="noreferrer" download>
+                  Download cv
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Education Block */}
+          <div className="section" id="education">
+            <h4>Education</h4>
+            <hr />
+            {education.map((edu, index) => (
+              <div className="item" key={index}>
+                <h5 className="flex items-center gap-x-2">
+                  <bs.BsBook /> {edu.title}
+                </h5>
+                <p>{edu.location} ({edu.began}-{edu.ended})</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Dynamic Skills Grid Block */}
+          <div className="section" id="skills">
+            <h4>Skills</h4>
+            <hr />
+            {skills.map((skill, index) => {
+              // Bound limits cleanly between a range score of 0-5
+              const filledStars = Math.min(Math.max(skill.quality, 0), 5);
+              const emptyStars = 5 - filledStars;
+
+              return (
+                <div className="item" key={index}>
+                  <h5>{skill.skill}</h5>
+                  <div className="flex items-center gap-x-1">
+                    {/* Render Filled Score Rating Stars */}
+                    {Array.from({ length: filledStars }).map((_, i) => (
+                      <bs.BsStarFill key={`filled-${i}`} />
+                    ))}
+                    {/* Render Empty Remainder Stars */}
+                    {Array.from({ length: emptyStars }).map((_, i) => (
+                      <bs.BsStar key={`empty-${i}`} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </div>
     </div>
   );
 }
