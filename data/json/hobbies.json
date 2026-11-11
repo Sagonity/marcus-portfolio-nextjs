@@ -1,0 +1,38 @@
+[
+    {
+        "id": "running",
+        "title": "Running",
+        "subtitle": "10K & half marathon",
+        "description": "I run 10K races and half marathons. Training for a race keeps me disciplined, and there's nothing like crossing the finish line with a new personal best.",
+        "stats": [
+            { "label": "10K personal best", "value": "" },
+            { "label": "Half marathon personal best", "value": "" }
+        ],
+        "links": []
+    },
+    {
+        "id": "discgolf",
+        "title": "Disc Golf",
+        "subtitle": "PDGA member",
+        "description": "I play disc golf and I'm a member of the Professional Disc Golf Association (PDGA), so I can play sanctioned tournaments and get an official player rating.",
+        "stats": [
+            { "label": "PDGA number", "value": "" },
+            { "label": "PDGA rating", "value": "" }
+        ],
+        "links": [
+            { "label": "My PDGA profile", "url": "" }
+        ]
+    },
+    {
+        "id": "bowling",
+        "title": "Competition Bowling",
+        "subtitle": "Competing in Norway",
+        "description": "I bowl competitively in Norway. Bowling has been a big part of my life, both on the lanes and behind the counter at Lucky Bowl.",
+        "stats": [
+            { "label": "Club", "value": "" },
+            { "label": "Average", "value": "" },
+            { "label": "High game", "value": "" }
+        ],
+        "links": []
+    }
+]

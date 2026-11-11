@@ -1,128 +1,119 @@
 import Image from "next/image";
-import "./index.css";
-import * as bs from "react-icons/bs"
-import experience from "../data/json/experience.json"
-import education from "../data/json/education.json"
-import skills from "../data/json/skills.json"
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from '@vercel/analytics/next';
-
+import Link from "next/link";
+import { BsArrowRight, BsEnvelopeAtFill, BsGeoAltFill } from "react-icons/bs";
+import { FaGamepad } from "react-icons/fa6";
+import profile from "@/data/json/profile.json";
+import projects from "@/data/json/projects.json";
+import hobbies from "@/data/json/hobbies.json";
+import { Card, StatusBadge } from "./_components/ui";
+import { hobbyIcon } from "./_components/hobbyIcons";
 
 export default function Home() {
+  const current = projects.find((p) => p.status !== "Completed");
+
   return (
-    <div className="container">
-      {/* About Me Section */}
-      <div className="row" id="main">
-        <div className="col">
-          <div className="section" id="about">
-            <h3>About Me</h3>
-            <hr />
-            <div className="subsection">
+    <div className="space-y-16">
+      {/* Hero */}
+      <section className="flex flex-col-reverse items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="max-w-xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+            Hi, I&apos;m
+          </p>
+          <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
+            {profile.name}
+          </h1>
+          <p className="mt-2 text-lg text-muted">{profile.role}</p>
+          <p className="mt-6 leading-relaxed">{profile.intro}</p>
+
+          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+            <li className="flex items-center gap-2">
+              <BsGeoAltFill /> {profile.location}
+            </li>
+            <li className="flex items-center gap-2">
+              <BsEnvelopeAtFill />
+              <a href={`mailto:${profile.email}`} className="hover:text-accent">
+                {profile.email}
+              </a>
+            </li>
+          </ul>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/resume"
+              className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-on-accent hover:opacity-90"
+            >
+              View resume
+            </Link>
+            <Link
+              href="/projects"
+              className="rounded-lg border border-border px-5 py-2.5 text-sm font-semibold hover:border-accent hover:text-accent"
+            >
+              See projects
+            </Link>
+          </div>
+        </div>
+
+        <Image
+          src="/images/Profilbilde.jpg"
+          width={200}
+          height={200}
+          alt={`${profile.name} profile picture`}
+          priority
+          className="h-36 w-36 rounded-full border-4 border-surface object-cover shadow-lg ring-2 ring-accent sm:h-52 sm:w-52"
+        />
+      </section>
+
+      {/* Currently working on */}
+      {current && (
+        <section>
+          <h2 className="mb-4 text-xl font-semibold">Currently working on</h2>
+          <Card className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-start gap-4">
+              <FaGamepad className="mt-1 shrink-0 text-3xl text-accent" />
               <div>
-                <p><b>Languages:</b> HTML, JS, CSS, SQL, Python</p>
-                <p><b>Environments:</b> Node.js</p>
-                <p><b>Frameworks:</b> Express.js</p>
-              </div>
-              {/* Next.js Optimized Image Component */}
-              <Image 
-                src="/images/Profilbilde.jpg" 
-                width={200} 
-                height={200} 
-                alt="Marcus Tangen Profile Picture" 
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Body Grid Layout */}
-      <div className="row" id="submain">
-        
-        {/* Left Column: Work Experience */}
-        <div className="col">
-          <div className="section" id="experience">
-            <h4>Work Experience</h4>
-            <hr />
-            {experience.map((exp, index) => (
-              <div className="item" key={index}>
-                <h5>{exp.title}</h5>
-                <p style={{ marginBottom: "0px" }}>
-                  {exp.company} <i>{exp.stilling}</i>
-                </p>
-                <p>{exp.location} ({exp.began}-{exp.ended})</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right Column: Contact, Education & Skills */}
-        <div className="col">
-          
-          {/* Contact Details Block */}
-          <div className="section" id="contact">
-            <ul className="contact-list">
-              <li className="flex items-center gap-x-2">
-                <bs.BsFillGeoAltFill /> Norway, Fjellhamar
-              </li>
-              <li className="flex items-center gap-x-2">
-                <bs.BsEnvelopeAtFill />
-                <a href="mailto:marcustangen@gmail.com"> marcustangen@gmail.com</a>
-              </li>
-              <li className="flex items-center gap-x-2">
-                <bs.BsFileEarmarkPdfFill /> 
-                <a href="https://drive.google.com/open?id=1aAojQAcWgQBZAMTgh4IbkJXRVul8cQ4y" target="_blank" rel="noreferrer" download>
-                  Download cv
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Education Block */}
-          <div className="section" id="education">
-            <h4>Education</h4>
-            <hr />
-            {education.map((edu, index) => (
-              <div className="item" key={index}>
-                <h5 className="flex items-center gap-x-2">
-                  <bs.BsBook /> {edu.title}
-                </h5>
-                <p>{edu.location} ({edu.began}-{edu.ended})</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Dynamic Skills Grid Block */}
-          <div className="section" id="skills">
-            <h4>Skills</h4>
-            <hr />
-            {skills.map((skill, index) => {
-              // Bound limits cleanly between a range score of 0-5
-              const filledStars = Math.min(Math.max(skill.quality, 0), 5);
-              const emptyStars = 5 - filledStars;
-
-              return (
-                <div className="item" key={index}>
-                  <h5>{skill.skill}</h5>
-                  <div className="flex items-center gap-x-1">
-                    {/* Render Filled Score Rating Stars */}
-                    {Array.from({ length: filledStars }).map((_, i) => (
-                      <bs.BsStarFill key={`filled-${i}`} />
-                    ))}
-                    {/* Render Empty Remainder Stars */}
-                    {Array.from({ length: emptyStars }).map((_, i) => (
-                      <bs.BsStar key={`empty-${i}`} />
-                    ))}
-                  </div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="text-lg font-semibold">{current.title}</h3>
+                  <StatusBadge status={current.status} />
                 </div>
-              );
-            })}
-          </div>
+                <p className="mt-2 text-muted">{current.description}</p>
+              </div>
+            </div>
+            <Link
+              href="/projects"
+              className="flex shrink-0 items-center gap-2 text-sm font-semibold text-accent"
+            >
+              Projects <BsArrowRight />
+            </Link>
+          </Card>
+        </section>
+      )}
 
+      {/* Hobbies preview */}
+      <section>
+        <div className="mb-4 flex items-baseline justify-between">
+          <h2 className="text-xl font-semibold">Away from the screen</h2>
+          <Link
+            href="/hobbies"
+            className="flex items-center gap-2 text-sm font-semibold text-accent"
+          >
+            All hobbies <BsArrowRight />
+          </Link>
         </div>
-      </div>
-      <SpeedInsights />
-      <Analytics />
+        <div className="grid gap-4 sm:grid-cols-3">
+          {hobbies.map((hobby) => {
+            const Icon = hobbyIcon(hobby.id);
+            return (
+              <Link key={hobby.id} href={`/hobbies#${hobby.id}`} className="group">
+                <Card className="h-full transition-colors group-hover:border-accent">
+                  <Icon className="text-3xl text-accent" />
+                  <h3 className="mt-4 font-semibold">{hobby.title}</h3>
+                  <p className="text-sm text-muted">{hobby.subtitle}</p>
+                </Card>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }

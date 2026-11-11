@@ -1,0 +1,12 @@
+{
+    "name": "Marcus Tangen",
+    "role": "Technical Operator & hobby developer",
+    "location": "Fjellhamar, Norway",
+    "email": "marcustangen@gmail.com",
+    "cvUrl": "https://drive.google.com/open?id=1aAojQAcWgQBZAMTgh4IbkJXRVul8cQ4y",
+    "intro": "I'm a hobby developer from Norway with a background in backend development from Noroff. I work full-time as a Technical Operator at Verisure, and in my spare time I build things with code. Right now I'm making a game with a friend. When I'm not at a keyboard I'm usually running, throwing discs or bowling.",
+    "links": [
+        { "label": "GitHub", "url": "" },
+        { "label": "LinkedIn", "url": "" }
+    ]
+}
