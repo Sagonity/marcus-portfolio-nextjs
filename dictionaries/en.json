@@ -1,0 +1,51 @@
+{
+    "meta": {
+        "title": "Marcus Tangen - Portfolio",
+        "description": "Marcus Tangen is a hobby developer from Norway. Projects, hobbies and resume."
+    },
+    "nav": {
+        "home": "Home",
+        "projects": "Projects",
+        "hobbies": "Hobbies",
+        "resume": "Resume",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu",
+        "switchLanguage": "Bytt til norsk"
+    },
+    "home": {
+        "greeting": "Hi, I'm",
+        "viewResume": "View resume",
+        "seeProjects": "See projects",
+        "currentlyWorkingOn": "Currently working on",
+        "projectsLink": "Projects",
+        "awayFromScreen": "Away from the screen",
+        "allHobbies": "All hobbies"
+    },
+    "projects": {
+        "title": "Projects",
+        "description": "Things Marcus Tangen is building.",
+        "intro": "Things I'm building. My first big project is a game I'm making with a friend, so check back for updates as it grows.",
+        "moreSoon": "More projects coming soon."
+    },
+    "hobbies": {
+        "title": "Hobbies",
+        "description": "Running, disc golf and competition bowling.",
+        "intro": "When I'm not coding or at work, you'll find me on the road, on the disc golf course or at the bowling alley."
+    },
+    "resume": {
+        "title": "Resume",
+        "description": "Work experience, education and skills of Marcus Tangen.",
+        "intro": "My work experience, education and skills.",
+        "experience": "Work Experience",
+        "education": "Education",
+        "skills": "Skills",
+        "downloadCv": "Download CV",
+        "present": "Present",
+        "outOf": "out of"
+    },
+    "notFound": {
+        "title": "Page not found",
+        "text": "Sorry, that page doesn't exist.",
+        "back": "Back to home"
+    }
+}

@@ -1,21 +1,28 @@
 import type { Metadata } from "next";
 import { BsBoxArrowUpRight } from "react-icons/bs";
-import hobbies from "@/data/json/hobbies.json";
-import { Card, PageHeader, filled } from "../_components/ui";
-import { hobbyIcon } from "../_components/hobbyIcons";
+import { getDictionary, tr, type Locale } from "@/i18n";
+import { hobbies } from "@/data/content";
+import { Card, PageHeader, filled } from "../../_components/ui";
+import { hobbyIcon } from "../../_components/hobbyIcons";
+import { pageMetadata } from "../../_components/meta";
 
-export const metadata: Metadata = {
-  title: "Hobbies",
-  description: "Running, disc golf and competition bowling.",
-};
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]/hobbies">): Promise<Metadata> {
+  const lang = (await params).lang as Locale;
+  const t = (await getDictionary(lang)).hobbies;
+  return pageMetadata(lang, "/hobbies", t.title, t.description);
+}
 
-export default function HobbiesPage() {
+export default async function HobbiesPage({
+  params,
+}: PageProps<"/[lang]/hobbies">) {
+  const lang = (await params).lang as Locale;
+  const t = (await getDictionary(lang)).hobbies;
+
   return (
     <>
-      <PageHeader title="Hobbies">
-        When I&apos;m not coding or at work, you&apos;ll find me on the road,
-        on the disc golf course or at the bowling alley.
-      </PageHeader>
+      <PageHeader title={t.title}>{t.intro}</PageHeader>
 
       <div className="grid gap-6">
         {hobbies.map((hobby) => {
@@ -30,23 +37,26 @@ export default function HobbiesPage() {
                   <Icon />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-xl font-semibold">{hobby.title}</h2>
-                  <p className="text-sm text-muted">{hobby.subtitle}</p>
-                  <p className="mt-4 leading-relaxed">{hobby.description}</p>
+                  <h2 className="text-xl font-semibold">{tr(hobby.title, lang)}</h2>
+                  <p className="text-sm text-muted">{tr(hobby.subtitle, lang)}</p>
+                  <p className="mt-4 leading-relaxed">{tr(hobby.description, lang)}</p>
 
                   {stats.length > 0 && (
-                    <dl className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3">
+                    <dl className="mt-5 grid gap-4 sm:grid-cols-3">
                       {stats.map((stat) => (
                         <div
-                          key={stat.label}
+                          key={tr(stat.label, "en")}
                           className="rounded-lg border border-border p-3"
                         >
                           <dt className="text-xs uppercase tracking-wide text-muted">
-                            {stat.label}
+                            {tr(stat.label, lang)}
                           </dt>
-                          <dd className="mt-1 text-lg font-semibold">
+                          <dd className="mt-1 text-lg font-semibold tabular-nums">
                             {stat.value}
                           </dd>
+                          {stat.note && (
+                            <dd className="text-xs text-muted">{stat.note}</dd>
+                          )}
                         </div>
                       ))}
                     </dl>
@@ -62,7 +72,7 @@ export default function HobbiesPage() {
                           rel="noreferrer"
                           className="flex items-center gap-2 text-sm font-semibold text-accent"
                         >
-                          {link.label} <BsBoxArrowUpRight />
+                          {tr(link.label, lang)} <BsBoxArrowUpRight />
                         </a>
                       ))}
                     </div>

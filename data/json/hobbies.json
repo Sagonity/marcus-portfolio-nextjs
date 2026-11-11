@@ -1,38 +1,74 @@
 [
     {
         "id": "running",
-        "title": "Running",
-        "subtitle": "10K & half marathon",
-        "description": "I run 10K races and half marathons. Training for a race keeps me disciplined, and there's nothing like crossing the finish line with a new personal best.",
+        "title": { "en": "Running", "no": "Løping" },
+        "subtitle": { "en": "10K & half marathon", "no": "10 km og halvmaraton" },
+        "description": {
+            "en": "I run 10K races and half marathons. Training for a race keeps me disciplined, and there's nothing like crossing the finish line with a new personal best.",
+            "no": "Jeg løper 10 km og halvmaraton. Å trene mot et løp holder meg disiplinert, og ingenting slår å komme i mål med ny pers."
+        },
         "stats": [
-            { "label": "10K personal best", "value": "" },
-            { "label": "Half marathon personal best", "value": "" }
+            {
+                "label": { "en": "10K personal best", "no": "Pers 10 km" },
+                "value": "44:34",
+                "note": "Sentrumsløpet 2026"
+            },
+            {
+                "label": { "en": "Half marathon personal best", "no": "Pers halvmaraton" },
+                "value": "1:55:04",
+                "note": "Oslo Halvmaraton"
+            }
         ],
         "links": []
     },
     {
         "id": "discgolf",
-        "title": "Disc Golf",
-        "subtitle": "PDGA member",
-        "description": "I play disc golf and I'm a member of the Professional Disc Golf Association (PDGA), so I can play sanctioned tournaments and get an official player rating.",
+        "title": { "en": "Disc Golf", "no": "Discgolf" },
+        "subtitle": { "en": "PDGA member", "no": "PDGA-medlem" },
+        "description": {
+            "en": "I play disc golf and I'm a member of the Professional Disc Golf Association (PDGA), so I can play sanctioned tournaments and get an official player rating.",
+            "no": "Jeg spiller discgolf og er medlem av Professional Disc Golf Association (PDGA), slik at jeg kan spille sanksjonerte turneringer og få offisiell rating."
+        },
         "stats": [
-            { "label": "PDGA number", "value": "" },
-            { "label": "PDGA rating", "value": "" }
+            {
+                "label": { "en": "PDGA number", "no": "PDGA-nummer" },
+                "value": "#279899",
+                "note": ""
+            },
+            {
+                "label": { "en": "PDGA rating", "no": "PDGA-rating" },
+                "value": "",
+                "note": ""
+            }
         ],
         "links": [
-            { "label": "My PDGA profile", "url": "" }
+            {
+                "label": { "en": "My PDGA profile", "no": "Min PDGA-profil" },
+                "url": "https://www.pdga.com/player/279899"
+            }
         ]
     },
     {
         "id": "bowling",
-        "title": "Competition Bowling",
-        "subtitle": "Competing in Norway",
-        "description": "I bowl competitively in Norway. Bowling has been a big part of my life, both on the lanes and behind the counter at Lucky Bowl.",
+        "title": { "en": "Competition Bowling", "no": "Konkurransebowling" },
+        "subtitle": { "en": "Competing in Norway", "no": "Konkurrerer i Norge" },
+        "description": {
+            "en": "I bowl competitively in Norway. Bowling has been a big part of my life, both on the lanes and behind the counter at Lucky Bowl.",
+            "no": "Jeg bowler i konkurranser i Norge. Bowling har vært en stor del av livet mitt, både på banen og bak disken på Lucky Bowl."
+        },
         "stats": [
-            { "label": "Club", "value": "" },
-            { "label": "Average", "value": "" },
-            { "label": "High game", "value": "" }
+            { "label": { "en": "Club", "no": "Klubb" }, "value": "", "note": "" },
+            { "label": { "en": "Average", "no": "Snitt" }, "value": "", "note": "" },
+            { "label": { "en": "High game", "no": "Beste serie" }, "value": "", "note": "" }
         ],
-        "links": []
+        "links": [
+            {
+                "label": {
+                    "en": "My profile at the Norwegian Bowling Federation",
+                    "no": "Min profil hos Norges Bowlingforbund"
+                },
+                "url": "https://data.bowling.no/oppslagsverk/person/?Id=14698"
+            }
+        ]
     }
 ]

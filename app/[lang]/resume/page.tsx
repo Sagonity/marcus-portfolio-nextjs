@@ -7,54 +7,51 @@ import {
   BsStar,
   BsStarFill,
 } from "react-icons/bs";
-import profile from "@/data/json/profile.json";
-import experience from "@/data/json/experience.json";
-import education from "@/data/json/education.json";
-import skills from "@/data/json/skills.json";
-import { Card, PageHeader } from "../_components/ui";
+import { formatMonth, getDictionary, tr, type Locale } from "@/i18n";
+import { education, experience, profile, skills } from "@/data/content";
+import { Card, PageHeader } from "../../_components/ui";
+import { pageMetadata } from "../../_components/meta";
 
-export const metadata: Metadata = {
-  title: "Resume",
-  description: "Work experience, education and skills of Marcus Tangen.",
-};
-
-function Period({ began, ended }: { began: string; ended: string }) {
-  return (
-    <span className="capitalize">
-      {began} – {ended || "Present"}
-    </span>
-  );
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]/resume">): Promise<Metadata> {
+  const lang = (await params).lang as Locale;
+  const t = (await getDictionary(lang)).resume;
+  return pageMetadata(lang, "/resume", t.title, t.description);
 }
 
-export default function ResumePage() {
+export default async function ResumePage({
+  params,
+}: PageProps<"/[lang]/resume">) {
+  const lang = (await params).lang as Locale;
+  const t = (await getDictionary(lang)).resume;
+
+  const period = (began: string, ended: string) =>
+    `${formatMonth(began, lang)} – ${ended ? formatMonth(ended, lang) : t.present}`;
+
   return (
     <>
-      <PageHeader title="Resume">
-        My work experience, education and skills.
-      </PageHeader>
+      <PageHeader title={t.title}>{t.intro}</PageHeader>
 
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Experience */}
         <Card className="lg:col-span-2">
-          <h2 className="text-xl font-semibold">Work Experience</h2>
+          <h2 className="text-xl font-semibold">{t.experience}</h2>
           <ol className="mt-6 border-l-2 border-border">
-            {experience.map((exp) => (
-              <li
-                key={`${exp.company}-${exp.began}`}
-                className="relative mb-8 pl-6 last:mb-0"
-              >
+            {experience.map((job) => (
+              <li key={`${tr(job.company, "en")}-${job.began}`} className="relative mb-8 pl-6 last:mb-0">
                 <span
                   className={`absolute -left-[7px] top-1.5 h-3 w-3 rounded-full ${
-                    exp.ended ? "bg-border" : "bg-accent"
+                    job.ended ? "bg-border" : "bg-accent"
                   }`}
                 />
-                <h3 className="font-semibold">{exp.title}</h3>
+                <h3 className="font-semibold">{tr(job.title, lang)}</h3>
                 <p className="text-sm">
-                  {exp.company}{" "}
-                  <span className="italic text-muted">· {exp.employment}</span>
+                  {tr(job.company, lang)}{" "}
+                  <span className="italic text-muted">· {tr(job.employment, lang)}</span>
                 </p>
                 <p className="text-sm text-muted">
-                  {exp.location} · <Period began={exp.began} ended={exp.ended} />
+                  {tr(job.location, lang)} · {period(job.began, job.ended)}
                 </p>
               </li>
             ))}
@@ -66,7 +63,7 @@ export default function ResumePage() {
           <Card>
             <ul className="space-y-4 text-sm">
               <li className="flex items-center gap-3">
-                <BsGeoAltFill className="text-accent" /> {profile.location}
+                <BsGeoAltFill className="text-accent" /> {tr(profile.location, lang)}
               </li>
               <li className="flex items-center gap-3">
                 <BsEnvelopeAtFill className="text-accent" />
@@ -82,7 +79,7 @@ export default function ResumePage() {
                   rel="noreferrer"
                   className="hover:text-accent"
                 >
-                  Download CV
+                  {t.downloadCv}
                 </a>
               </li>
             </ul>
@@ -90,15 +87,15 @@ export default function ResumePage() {
 
           {/* Education */}
           <Card>
-            <h2 className="text-xl font-semibold">Education</h2>
+            <h2 className="text-xl font-semibold">{t.education}</h2>
             <ul className="mt-4 space-y-4">
               {education.map((edu) => (
-                <li key={edu.title}>
+                <li key={edu.began}>
                   <h3 className="flex items-center gap-2 font-semibold">
-                    <BsBook className="text-accent" /> {edu.title}
+                    <BsBook className="text-accent" /> {tr(edu.title, lang)}
                   </h3>
                   <p className="text-sm text-muted">
-                    {edu.location} · <Period began={edu.began} ended={edu.ended} />
+                    {tr(edu.location, lang)} · {period(edu.began, edu.ended)}
                   </p>
                 </li>
               ))}
@@ -107,19 +104,16 @@ export default function ResumePage() {
 
           {/* Skills */}
           <Card>
-            <h2 className="text-xl font-semibold">Skills</h2>
+            <h2 className="text-xl font-semibold">{t.skills}</h2>
             <ul className="mt-4 space-y-3">
               {skills.map((skill) => {
                 const score = Math.min(Math.max(skill.quality, 0), 5);
                 return (
-                  <li
-                    key={skill.skill}
-                    className="flex items-center justify-between"
-                  >
+                  <li key={skill.skill} className="flex items-center justify-between">
                     <span className="font-medium">{skill.skill}</span>
                     <span
                       className="flex gap-1 text-accent"
-                      aria-label={`${score} out of 5`}
+                      aria-label={`${score} ${t.outOf} 5`}
                     >
                       {Array.from({ length: 5 }).map((_, i) =>
                         i < score ? <BsStarFill key={i} /> : <BsStar key={i} />,
