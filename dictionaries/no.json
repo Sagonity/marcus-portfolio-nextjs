@@ -1,0 +1,51 @@
+{
+    "meta": {
+        "title": "Marcus Tangen - Portefølje",
+        "description": "Marcus Tangen er en hobbyutvikler fra Norge. Prosjekter, hobbyer og CV."
+    },
+    "nav": {
+        "home": "Hjem",
+        "projects": "Prosjekter",
+        "hobbies": "Hobbyer",
+        "resume": "CV",
+        "openMenu": "Åpne meny",
+        "closeMenu": "Lukk meny",
+        "switchLanguage": "Switch to English"
+    },
+    "home": {
+        "greeting": "Hei, jeg er",
+        "viewResume": "Se CV",
+        "seeProjects": "Se prosjekter",
+        "currentlyWorkingOn": "Jobber med nå",
+        "projectsLink": "Prosjekter",
+        "awayFromScreen": "Borte fra skjermen",
+        "allHobbies": "Alle hobbyer"
+    },
+    "projects": {
+        "title": "Prosjekter",
+        "description": "Ting Marcus Tangen bygger.",
+        "intro": "Ting jeg bygger. Mitt første store prosjekt er et spill jeg lager sammen med en kompis – følg med for oppdateringer etter hvert som det vokser.",
+        "moreSoon": "Flere prosjekter kommer snart."
+    },
+    "hobbies": {
+        "title": "Hobbyer",
+        "description": "Løping, discgolf og konkurransebowling.",
+        "intro": "Når jeg ikke koder eller er på jobb, finner du meg på løpeturen, på discgolfbanen eller i bowlinghallen."
+    },
+    "resume": {
+        "title": "CV",
+        "description": "Arbeidserfaring, utdanning og ferdigheter til Marcus Tangen.",
+        "intro": "Min arbeidserfaring, utdanning og ferdigheter.",
+        "experience": "Arbeidserfaring",
+        "education": "Utdanning",
+        "skills": "Ferdigheter",
+        "downloadCv": "Last ned CV",
+        "present": "Nå",
+        "outOf": "av"
+    },
+    "notFound": {
+        "title": "Fant ikke siden",
+        "text": "Beklager, den siden finnes ikke.",
+        "back": "Tilbake til forsiden"
+    }
+}

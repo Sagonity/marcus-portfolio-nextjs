@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Exploration: Deepshaft",
+        "completed": false,
+        "status": {
+            "en": "In development",
+            "no": "Under utvikling"
+        },
+        "description": {
+            "en": "An auto-battler exploration and mining game. Explore to find rare resources, mine for the basic ones, and fight bosses to push further into the depths. It's still early in development, so screenshots and a playable build will show up here as the game comes together.",
+            "no": "Et autobattler-, utforsknings- og gruvespill. Utforsk for å finne sjeldne ressurser, grav etter de vanlige, og bekjemp bosser for å komme dypere ned i sjakten. Spillet er fortsatt tidlig i utviklingen, så skjermbilder og en spillbar versjon dukker opp her etter hvert."
+        },
+        "role": {
+            "en": "Programmer – my friend handles the art",
+            "no": "Programmerer – kompisen min står for grafikken"
+        },
+        "tech": ["Unity 6", "C#"],
+        "links": []
+    }
+]

@@ -1,0 +1,21 @@
+{
+    "name": "Marcus Tangen",
+    "role": {
+        "en": "Technical Operator & hobby developer",
+        "no": "Teknisk operatør og hobbyutvikler"
+    },
+    "location": {
+        "en": "Fjellhamar, Norway",
+        "no": "Fjellhamar, Norge"
+    },
+    "email": "marcustangen@gmail.com",
+    "cvUrl": "https://drive.google.com/open?id=1aAojQAcWgQBZAMTgh4IbkJXRVul8cQ4y",
+    "intro": {
+        "en": "I'm a hobby developer from Norway with a background in backend development from Noroff. I work full-time as a Technical Operator at Verisure, and in my spare time I build things with code. Right now I'm programming Exploration: Deepshaft, a game I'm making in Unity together with a friend. When I'm not at a keyboard I'm usually running, throwing discs or bowling.",
+        "no": "Jeg er en hobbyutvikler fra Norge med bakgrunn i backend-utvikling fra Noroff. Jeg jobber fulltid som teknisk operatør i Verisure, og på fritiden bygger jeg ting med kode. Akkurat nå programmerer jeg Exploration: Deepshaft, et spill jeg lager i Unity sammen med en kompis. Når jeg ikke sitter ved tastaturet, er jeg som regel ute og løper, kaster disc eller bowler."
+    },
+    "links": [
+        { "label": "GitHub", "url": "" },
+        { "label": "LinkedIn", "url": "" }
+    ]
+}

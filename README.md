@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Marcus Tangen – Portfolio
 
-## Getting Started
+My personal website: projects, hobbies and resume. Built with Next.js (App Router) and Tailwind CSS, deployed on Vercel.
 
-First, run the development server:
+## Pages
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+The site is in English (`/en/...`) and Norwegian (`/no/...`). Visitors are sent to the right language based on their browser, and the language button in the menu remembers their choice.
+
+| Route           | What's on it                                    |
+| --------------- | ----------------------------------------------- |
+| `/[lang]`          | Intro, current project, hobby highlights        |
+| `/[lang]/projects` | Projects I'm working on / have finished         |
+| `/[lang]/hobbies`  | Running, disc golf (PDGA), competition bowling  |
+| `/[lang]/resume`   | Work experience, education, skills, CV download |
+
+## Updating content
+
+All content lives in `data/json/`, so you don't need to touch any code.
+
+Any text can be written either as a plain string (same in both languages) or translated:
+
+```json
+"title": { "en": "Running", "no": "Løping" }
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- `profile.json`: name, intro text, email, CV link
+- `projects.json`: one object per project. Set `completed` to `true` when it's finished (the home page shows the first unfinished one). `tech` is a list of tags, `links` is a list of `{ "label", "url" }`
+- `hobbies.json`: description, stats and links per hobby. **Stats and links with an empty `value`/`url` are hidden**, so fill them in when you want them shown. `note` is shown under a stat (e.g. which race a PB is from). Stat values and notes can be translated too (e.g. `{ "en": "188.64", "no": "188,64" }`)
+- `experience.json`, `education.json`: dates are `"YYYY-MM"` and are formatted per language. Leave `ended` empty for a current job (shows "Present"/"Nå")
+- `skills.json`: skill name and a 0-5 rating
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Menu labels, headings and other fixed text are in `dictionaries/en.json` and `dictionaries/no.json`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000).
