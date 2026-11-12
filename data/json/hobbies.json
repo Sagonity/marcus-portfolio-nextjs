@@ -40,29 +40,54 @@
             "no": "Discgolf"
         },
         "subtitle": {
-            "en": "PDGA member",
-            "no": "PDGA-medlem"
+            "en": "PDGA member · amateur",
+            "no": "PDGA-medlem · amatør"
         },
         "description": {
-            "en": "I play disc golf and I'm a member of the Professional Disc Golf Association (PDGA), so I can play sanctioned tournaments and get an official player rating.",
-            "no": "Jeg spiller discgolf og er medlem av Professional Disc Golf Association (PDGA), slik at jeg kan spille sanksjonerte turneringer og få offisiell rating."
+            "en": "I play disc golf and have been a member of the Professional Disc Golf Association (PDGA) since 2024. As a member I play sanctioned tournaments as an amateur and have an official player rating that I'm working to push higher.",
+            "no": "Jeg spiller discgolf og har vært medlem av Professional Disc Golf Association (PDGA) siden 2024. Som medlem spiller jeg sanksjonerte turneringer som amatør og har en offisiell rating som jeg jobber med å få opp."
         },
         "stats": [
+            {
+                "label": {
+                    "en": "PDGA rating",
+                    "no": "PDGA-rating"
+                },
+                "value": "819",
+                "note": {
+                    "en": "As of Sept 2026",
+                    "no": "Per sep. 2026"
+                }
+            },
+            {
+                "label": {
+                    "en": "PDGA events played",
+                    "no": "PDGA-turneringer spilt"
+                },
+                "value": "9",
+                "note": ""
+            },
+            {
+                "label": {
+                    "en": "Classification",
+                    "no": "Klasse"
+                },
+                "value": {
+                    "en": "Amateur",
+                    "no": "Amatør"
+                },
+                "note": ""
+            },
             {
                 "label": {
                     "en": "PDGA number",
                     "no": "PDGA-nummer"
                 },
                 "value": "#279899",
-                "note": ""
-            },
-            {
-                "label": {
-                    "en": "PDGA rating",
-                    "no": "PDGA-rating"
-                },
-                "value": "",
-                "note": ""
+                "note": {
+                    "en": "Member since 2024",
+                    "no": "Medlem siden 2024"
+                }
             }
         ],
         "links": [
