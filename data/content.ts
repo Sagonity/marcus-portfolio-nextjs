@@ -7,7 +7,7 @@ import educationJson from "./json/education.json";
 import skillsJson from "./json/skills.json";
 
 export type Link = { label: Localized; url: string };
-export type Stat = { label: Localized; value: string; note?: string };
+export type Stat = { label: Localized; value: Localized; note?: Localized };
 
 export type Profile = {
   name: string;

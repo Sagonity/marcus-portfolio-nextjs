@@ -42,7 +42,7 @@ export default async function HobbiesPage({
                   <p className="mt-4 leading-relaxed">{tr(hobby.description, lang)}</p>
 
                   {stats.length > 0 && (
-                    <dl className="mt-5 grid gap-4 sm:grid-cols-3">
+                    <dl className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                       {stats.map((stat) => (
                         <div
                           key={tr(stat.label, "en")}
@@ -52,10 +52,10 @@ export default async function HobbiesPage({
                             {tr(stat.label, lang)}
                           </dt>
                           <dd className="mt-1 text-lg font-semibold tabular-nums">
-                            {stat.value}
+                            {tr(stat.value, lang)}
                           </dd>
                           {stat.note && (
-                            <dd className="text-xs text-muted">{stat.note}</dd>
+                            <dd className="text-xs text-muted">{tr(stat.note, lang)}</dd>
                           )}
                         </div>
                       ))}

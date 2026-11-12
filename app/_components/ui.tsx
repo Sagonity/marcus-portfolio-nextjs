@@ -48,9 +48,13 @@ export function StatusBadge({ status }: { status: string }) {
   );
 }
 
-/** Keeps only entries the user has actually filled in. */
-export function filled<T extends { value?: string; url?: string }>(
-  items: T[],
-): T[] {
-  return items.filter((item) => (item.value ?? item.url ?? "").trim() !== "");
+/** Keeps only entries the user has actually filled in (non-empty `value` or `url`). */
+export function filled<
+  T extends { value?: string | Record<string, string>; url?: string },
+>(items: T[]): T[] {
+  return items.filter((item) => {
+    const v = item.value ?? item.url ?? "";
+    const text = typeof v === "string" ? v : Object.values(v).join("");
+    return text.trim() !== "";
+  });
 }

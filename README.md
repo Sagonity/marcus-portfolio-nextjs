@@ -25,7 +25,7 @@ Any text can be written either as a plain string (same in both languages) or tra
 
 - `profile.json`: name, intro text, email, CV link
 - `projects.json`: one object per project. Set `completed` to `true` when it's finished (the home page shows the first unfinished one). `tech` is a list of tags, `links` is a list of `{ "label", "url" }`
-- `hobbies.json`: description, stats and links per hobby. **Stats and links with an empty `value`/`url` are hidden**, so fill them in when you want them shown. `note` is shown under a stat (e.g. which race a PB is from)
+- `hobbies.json`: description, stats and links per hobby. **Stats and links with an empty `value`/`url` are hidden**, so fill them in when you want them shown. `note` is shown under a stat (e.g. which race a PB is from). Stat values and notes can be translated too (e.g. `{ "en": "188.64", "no": "188,64" }`)
 - `experience.json`, `education.json`: dates are `"YYYY-MM"` and are formatted per language. Leave `ended` empty for a current job (shows "Present"/"Nå")
 - `skills.json`: skill name and a 0-5 rating
 

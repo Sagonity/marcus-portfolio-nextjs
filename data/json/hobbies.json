@@ -1,20 +1,32 @@
 [
     {
         "id": "running",
-        "title": { "en": "Running", "no": "Løping" },
-        "subtitle": { "en": "10K & half marathon", "no": "10 km og halvmaraton" },
+        "title": {
+            "en": "Running",
+            "no": "Løping"
+        },
+        "subtitle": {
+            "en": "10K & half marathon",
+            "no": "10 km og halvmaraton"
+        },
         "description": {
             "en": "I run 10K races and half marathons. Training for a race keeps me disciplined, and there's nothing like crossing the finish line with a new personal best.",
             "no": "Jeg løper 10 km og halvmaraton. Å trene mot et løp holder meg disiplinert, og ingenting slår å komme i mål med ny pers."
         },
         "stats": [
             {
-                "label": { "en": "10K personal best", "no": "Pers 10 km" },
+                "label": {
+                    "en": "10K personal best",
+                    "no": "Pers 10 km"
+                },
                 "value": "44:34",
                 "note": "Sentrumsløpet 2026"
             },
             {
-                "label": { "en": "Half marathon personal best", "no": "Pers halvmaraton" },
+                "label": {
+                    "en": "Half marathon personal best",
+                    "no": "Pers halvmaraton"
+                },
                 "value": "1:55:04",
                 "note": "Oslo Halvmaraton"
             }
@@ -23,49 +35,120 @@
     },
     {
         "id": "discgolf",
-        "title": { "en": "Disc Golf", "no": "Discgolf" },
-        "subtitle": { "en": "PDGA member", "no": "PDGA-medlem" },
+        "title": {
+            "en": "Disc Golf",
+            "no": "Discgolf"
+        },
+        "subtitle": {
+            "en": "PDGA member",
+            "no": "PDGA-medlem"
+        },
         "description": {
             "en": "I play disc golf and I'm a member of the Professional Disc Golf Association (PDGA), so I can play sanctioned tournaments and get an official player rating.",
             "no": "Jeg spiller discgolf og er medlem av Professional Disc Golf Association (PDGA), slik at jeg kan spille sanksjonerte turneringer og få offisiell rating."
         },
         "stats": [
             {
-                "label": { "en": "PDGA number", "no": "PDGA-nummer" },
+                "label": {
+                    "en": "PDGA number",
+                    "no": "PDGA-nummer"
+                },
                 "value": "#279899",
                 "note": ""
             },
             {
-                "label": { "en": "PDGA rating", "no": "PDGA-rating" },
+                "label": {
+                    "en": "PDGA rating",
+                    "no": "PDGA-rating"
+                },
                 "value": "",
                 "note": ""
             }
         ],
         "links": [
             {
-                "label": { "en": "My PDGA profile", "no": "Min PDGA-profil" },
+                "label": {
+                    "en": "My PDGA profile",
+                    "no": "Min PDGA-profil"
+                },
                 "url": "https://www.pdga.com/player/279899"
             }
         ]
     },
     {
         "id": "bowling",
-        "title": { "en": "Competition Bowling", "no": "Konkurransebowling" },
-        "subtitle": { "en": "Competing in Norway", "no": "Konkurrerer i Norge" },
+        "title": {
+            "en": "Competition Bowling",
+            "no": "Konkurransebowling"
+        },
+        "subtitle": {
+            "en": "Oslo BK · competing in Norway",
+            "no": "Oslo BK · konkurrerer i Norge"
+        },
         "description": {
-            "en": "I bowl competitively in Norway. Bowling has been a big part of my life, both on the lanes and behind the counter at Lucky Bowl.",
-            "no": "Jeg bowler i konkurranser i Norge. Bowling har vært en stor del av livet mitt, både på banen og bak disken på Lucky Bowl."
+            "en": "I bowl for Oslo BK, both in the league and in tournaments around Norway like Larvik Open and Veitvet Double Tour. Bowling has been a big part of my life, both on the lanes and behind the counter at Lucky Bowl.",
+            "no": "Jeg bowler for Oslo BK, både i ligaen og i turneringer rundt i Norge som Larvik Open og Veitvet Double Tour. Bowling har vært en stor del av livet mitt, både på banen og bak disken på Lucky Bowl."
         },
         "stats": [
-            { "label": { "en": "Club", "no": "Klubb" }, "value": "", "note": "" },
-            { "label": { "en": "Average", "no": "Snitt" }, "value": "", "note": "" },
-            { "label": { "en": "High game", "no": "Beste serie" }, "value": "", "note": "" }
+            {
+                "label": {
+                    "en": "Club",
+                    "no": "Klubb"
+                },
+                "value": "Oslo BK",
+                "note": {
+                    "en": "License class C",
+                    "no": "Lisensklasse C"
+                }
+            },
+            {
+                "label": {
+                    "en": "Average",
+                    "no": "Snitt"
+                },
+                "value": {
+                    "en": "188.64",
+                    "no": "188,64"
+                },
+                "note": {
+                    "en": "2025/26 season · 128 games",
+                    "no": "Sesongen 25/26 · 128 serier"
+                }
+            },
+            {
+                "label": {
+                    "en": "Best tournament average",
+                    "no": "Beste turneringssnitt"
+                },
+                "value": {
+                    "en": "218.00",
+                    "no": "218,00"
+                },
+                "note": {
+                    "en": "Veitvet Double Tour 7 · 5 games",
+                    "no": "Veitvet Double Tour 7 · 5 serier"
+                }
+            },
+            {
+                "label": {
+                    "en": "National ranking",
+                    "no": "Norgesranking"
+                },
+                "value": {
+                    "en": "#500",
+                    "no": "500. plass"
+                },
+                "note": {
+                    "en": "Best: #489 (Sept 2026)",
+                    "no": "Beste: 489. plass (sep. 2026)"
+                }
+            }
         ],
         "links": [
             {
                 "label": {
-                    "en": "My profile at the Norwegian Bowling Federation",
-                    "no": "Min profil hos Norges Bowlingforbund"
+                    "en": "My profile and results at the Norwegian Bowling Federation",
+                    "no": "Min profil og resultater hos Norges Bowlingforbund"
                 },
                 "url": "https://data.bowling.no/oppslagsverk/person/?Id=14698"
             }
